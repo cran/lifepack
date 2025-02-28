@@ -2,28 +2,23 @@
 % Please edit documentation in R/prodint.R
 \name{prodint}
 \alias{prodint}
-\title{Productintegral
-This function calculates the productintegral of a matrix from s to t with a given number of steps for the runge kutta}
+\title{Productintegral (C++ optim)}
 \usage{
 prodint(A, s, t, n)
 }
 \arguments{
-\item{A}{intensity matrix}
+\item{A}{A function returning a matrix (intensity matrix)}
 
-\item{s}{initial timepoint}
+\item{s}{Initial timepoint}
 
-\item{t}{end timepoint}
+\item{t}{End timepoint}
 
-\item{n}{number of steps for the runge kutta algorithm}
+\item{n}{Number of steps for the Runge-Kutta algorithm}
 }
 \value{
-returns a matrix (if using an intensity matrix as A you are given the transition probabilities)
+A matrix (transition probabilities if A is an intensity matrix)
 }
 \description{
-Productintegral
-This function calculates the productintegral of a matrix from s to t with a given number of steps for the runge kutta
-}
-\examples{
-Lambda <- function(x) matrix(c(-0.1, 0.1, 0, -0.1), 2, 2)
-prodint(Lambda, 0, 80, 100)
+This function calculates the product integral of a matrix function from s to t.
+It uses a Runge-Kutta method implemented in C++ for efficiency.
 }
